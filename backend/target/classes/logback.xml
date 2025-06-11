@@ -1,0 +1,37 @@
+  <configuration>
+
+  <!-- コンソール出力 -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <target>System.out</target>
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%d{yyyy/MM/dd HH:mm:ss} %-5level [%thread] - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- ファイル出力 -->
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+    <!-- ログファイルの保存場所 -->
+    <file>/app/logs/app.log</file>
+
+    <!-- ログファイルのローテーション設定 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>/app/logs/app-%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+      <maxHistory>7</maxHistory> <!-- 最大7日間保存 -->
+    </rollingPolicy>
+
+    <!-- ログ出力フォーマット -->
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%d{yyyy/MM/dd HH:mm:ss} %-5level [%logger{36}] - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- すべてのログをコンソールとファイルに出力 -->
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </root>
+
+</configuration>

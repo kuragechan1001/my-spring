@@ -1,0 +1,13 @@
+{
+    "java.configuration.runtimes": [
+     {
+      "name": "JavaSE-17",
+      "path": "/usr/bin/java",
+      "default": true
+     },
+    ],
+    "java.format.settings.url": "./eclipse-java-google-style.xml", // 任意
+    "java.format.settings.profile": "GoogleStyle",
+    "java.project.sourcePaths": ["src/main/java"],
+    "java.project.outputPath": "target/classes"
+}
