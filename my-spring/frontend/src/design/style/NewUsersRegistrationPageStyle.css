@@ -1,0 +1,35 @@
+.NewUser {
+  font-size: 64px;
+  text-align: center; /* h1 要素はブロック要素なので、親コンテナに text-align: center; を設定すれば 中央に配置 できる */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 子要素を中央に揃える */
+}
+
+input {
+  display: block;
+  margin-bottom: 10px; /* 各項目の間に余白を追加 */
+  font-size: 40px;
+  height: 40px; /* 高さを大きくする */
+  width: 471px;
+  padding: 10px; /* 内側に余裕を持たせる */
+}
+
+input::placeholder {
+  font-size: 40px;
+}
+
+.UserColumn {
+  font-size: 32px;
+  margin-bottom: 0;
+  display: flex; /* 左寄せ */
+}
+
+.form-row {
+  display: flex;
+  align-items: center; /* 縦方向の中央揃え */
+  gap: 10px; /* ラベルと入力欄の間隔を調整 */
+}
